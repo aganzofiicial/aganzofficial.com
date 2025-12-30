@@ -31,7 +31,6 @@
     <style type="text/tailwindcss">
         @layer utilities {
           .hero-bg {
-            /* PETUNJUK: Ganti URL di bawah ini dengan foto background toko Anda */
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1415&q=80');
             background-size: cover;
             background-position: center;
@@ -131,7 +130,6 @@
                 <!-- Produk Gadget 1 -->
                 <div class="group bg-gray-50 rounded-3xl p-4 border border-transparent hover:border-accent transition-all shadow-sm">
                     <div class="bg-white rounded-2xl h-60 flex items-center justify-center mb-6 overflow-hidden">
-                        <!-- PETUNJUK: Ganti src di bawah dengan link foto produk Anda -->
                         <img src="https://placehold.co/400x500/e2e8f0/1e293b?text=iPhone+16+Pro" alt="iPhone 16 Pro" class="h-48 object-contain group-hover:scale-110 transition duration-500">
                     </div>
                     <h3 class="font-bold text-lg text-primary mb-1">iPhone 16 Pro</h3>
@@ -215,7 +213,8 @@
     <footer id="contact" class="bg-primary text-gray-400 py-16 border-t border-white/5">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold text-white mb-4">Aganz Official</h2>
-            <p class="text-sm mb-8">Jl. Raya Sukajati No. 45, Indramayu, Jawa Barat.</p>
+            <!-- ALAMAT DIPERBARUI -->
+            <p class="text-sm mb-8">Sukajati, Kecamatan Haurgeulis, Kabupaten Indramayu, Jawa Barat.</p>
             <div class="flex justify-center gap-6 mb-10">
                 <a href="https://www.instagram.com/aganzofficialolshop?igsh=anRkaXc1aWV2bHN4&utm_source=qr" target="_blank" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-accent hover:text-white transition"><i class="fa-brands fa-instagram text-xl"></i></a>
                 <a href="https://wa.me/6282217446919" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-white transition"><i class="fa-brands fa-whatsapp text-xl"></i></a>
