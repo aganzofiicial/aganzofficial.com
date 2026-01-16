@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aganz Official - Gadget, Aksesoris & Dana Tunai Nasional 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',
+                        accent: '#2563eb',
+                        secondary: '#f59e0b',
+                        success: '#22c55e'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .hero-bg {
+                background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                            url('https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=1400&q=80');
+                background-size: cover;
+                background-position: center;
+            }
+            .product-card {
+                @apply bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between;
+            }
+            .category-title {
+                @apply text-xl font-bold text-primary mb-6 flex items-center gap-3 border-l-4 border-accent pl-4 mt-12;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+
+    <!-- Top Bar -->
+    <div class="bg-accent text-white py-2 text-center text-[10px] md:text-xs font-bold tracking-widest uppercase">
+        <i class="fa-solid fa-earth-asia mr-2"></i> LAYANAN DANA TUNAI BPKB TERSEDIA UNTUK SELURUH WILAYAH INDONESIA
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-primary/95 backdrop-blur-md text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center py-4">
+            <a href="#" class="text-xl md:text-2xl font-bold flex items-center gap-2">
+                <i class="fa-solid fa-mobile-button text-secondary"></i>
+                <span>Aganz<span class="text-accent">Official</span></span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium text-sm">
+                <a href="#home" class="hover:text-accent transition">Beranda</a>
+                <a href="#katalog" class="hover:text-accent transition">Katalog Gadget</a>
+                <a href="#gadai-bpkb" class="text-secondary hover:underline flex items-center gap-1 font-bold">
+                    <i class="fa-solid fa-hand-holding-dollar"></i> Dana Tunai BPKB
+                </a>
+            </div>
+            <a href="https://wa.me/6282217446919" class="text-success text-2xl md:hidden"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="home" class="hero-bg text-white min-h-[70vh] flex items-center">
+        <div class="container mx-auto px-4 py-16 text-center md:text-left">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Gadget Impian & <br><span class="text-secondary">Solusi Dana Tunai 2026</span></h1>
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed">Pusat smartphone resmi terbaru dan pembiayaan multiguna BPKB dengan proses tercepat di Indonesia.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#katalog" class="bg-accent hover:bg-blue-700 px-8 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg"><i class="fa-solid fa-store"></i> Lihat Katalog</a>
+                    <a href="#gadai-bpkb" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg"><i class="fa-solid fa-file-invoice-dollar"></i> Ajukan Dana</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- KATALOG PRODUK -->
+    <section id="katalog" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary uppercase">Katalog Gadget Januari 2026</h2>
+                <p class="text-gray-500 mt-2 italic">Garansi Resmi iBox / SEIN / TAM - Unit Segel (BNIB)</p>
+            </div>
+
+            <!-- APPLE SERIES -->
+            <h3 class="category-title"><i class="fa-brands fa-apple text-2xl"></i> Apple iPhone Series</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <script>
+                    const appleProducts = [
+                        { name: "iPhone 17 Pro Max", desc: "Flagship tertinggi, layar LTPO baru" },
+                        { name: "iPhone 17 Pro", desc: "Ukuran ringkas, fitur kamera Pro" },
+                        { name: "iPhone 17 Air", desc: "Model ultra-tipis terbaru" },
+                        { name: "iPhone 17", desc: "Refresh rate tinggi (120Hz)" },
+                        { name: "iPhone 16e", desc: "Opsi budget terjangkau" }
+                    ];
+                    appleProducts.forEach(p => {
+                        document.write(`
+                            <div class="product-card">
+                                <div class="bg-gray-100 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden">
+                                    <img src="https://placehold.co/400x400/png?text=${p.name.replace(/ /g,'+')}" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-1">${p.name}</h4>
+                                    <p class="text-[10px] text-gray-500 leading-tight mb-4">${p.desc}</p>
+                                </div>
+                                <button onclick="orderViaWA('${p.name}')" class="w-full bg-accent text-white py-2 rounded-lg text-xs font-bold hover:bg-primary transition mt-auto">Cek Harga</button>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+
+            <!-- SAMSUNG SERIES -->
+            <h3 class="category-title"><i class="fa-solid fa-mobile-screen-button text-2xl text-blue-600"></i> Samsung Galaxy Series</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <script>
+                    const samsungProducts = [
+                        { name: "Galaxy S25 Ultra", desc: "Kamera Zoom 200MP Terbaru" },
+                        { name: "Galaxy S25 Edge", desc: "Layar melengkung ultra-tipis" },
+                        { name: "Galaxy S25", desc: "Flagship standar 2026" },
+                        { name: "Galaxy S25 FE", desc: "Fitur mewah harga kompetitif" },
+                        { name: "Galaxy Z Fold 7", desc: "Layar lipat produktivitas" },
+                        { name: "Galaxy Z Flip 7", desc: "Layar lipat compact & stylish" },
+                        { name: "Galaxy A56 5G", desc: "Seri menengah paling populer" },
+                        { name: "Galaxy A36 5G", desc: "Terbaik di kelas 3-4 jutaan" },
+                        { name: "Galaxy A17 5G", desc: "Entry-level 5G terbaru" }
+                    ];
+                    samsungProducts.forEach(p => {
+                        document.write(`
+                            <div class="product-card">
+                                <div class="bg-gray-100 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden">
+                                    <img src="https://placehold.co/400x400/png?text=${p.name.replace(/ /g,'+')}" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-1">${p.name}</h4>
+                                    <p class="text-[10px] text-gray-500 leading-tight mb-4">${p.desc}</p>
+                                </div>
+                                <button onclick="orderViaWA('${p.name}')" class="w-full bg-accent text-white py-2 rounded-lg text-xs font-bold hover:bg-primary transition mt-auto">Cek Harga</button>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+
+            <!-- OPPO SERIES -->
+            <h3 class="category-title"><i class="fa-solid fa-camera-retro text-2xl text-green-600"></i> OPPO Series</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <script>
+                    const oppoProducts = [
+                        { name: "Oppo Find X9 Ultra", desc: "Flagship Premium Fotografi" },
+                        { name: "Oppo Reno15 Pro", desc: "Sensor 200MP Portrait" },
+                        { name: "Oppo Reno15", desc: "Seri terlaris di Indonesia" },
+                        { name: "Oppo A6 Pro 5G", desc: "Desain Premium seri A" },
+                        { name: "Oppo A6x", desc: "Durabilitas tinggi entry-level" }
+                    ];
+                    oppoProducts.forEach(p => {
+                        document.write(`
+                            <div class="product-card">
+                                <div class="bg-gray-100 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden">
+                                    <img src="https://placehold.co/400x400/png?text=${p.name.replace(/ /g,'+')}" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-1">${p.name}</h4>
+                                    <p class="text-[10px] text-gray-500 leading-tight mb-4">${p.desc}</p>
+                                </div>
+                                <button onclick="orderViaWA('${p.name}')" class="w-full bg-accent text-white py-2 rounded-lg text-xs font-bold hover:bg-primary transition mt-auto">Cek Harga</button>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+
+            <!-- REALME SERIES -->
+            <h3 class="category-title"><i class="fa-solid fa-bolt text-2xl text-yellow-500"></i> Realme Series</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <script>
+                    const realmeProducts = [
+                        { name: "Realme GT 7 Pro", desc: "Snapdragon 8 Elite terbaru" },
+                        { name: "Realme 16 Pro+ 5G", desc: "Kamera Periskop Menengah" },
+                        { name: "Realme P3 Ultra", desc: "Seri Performa Online" },
+                        { name: "Realme C85 Pro", desc: "Baterai monster 7000 mAh" }
+                    ];
+                    realmeProducts.forEach(p => {
+                        document.write(`
+                            <div class="product-card">
+                                <div class="bg-gray-100 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden">
+                                    <img src="https://placehold.co/400x400/png?text=${p.name.replace(/ /g,'+')}" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-1">${p.name}</h4>
+                                    <p class="text-[10px] text-gray-500 leading-tight mb-4">${p.desc}</p>
+                                </div>
+                                <button onclick="orderViaWA('${p.name}')" class="w-full bg-accent text-white py-2 rounded-lg text-xs font-bold hover:bg-primary transition mt-auto">Cek Harga</button>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+
+            <!-- VIVO & iQOO SERIES -->
+            <h3 class="category-title"><i class="fa-solid fa-wand-magic-sparkles text-2xl text-blue-400"></i> Vivo & iQOO Series</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <script>
+                    const vivoProducts = [
+                        { name: "Vivo X200 Pro", desc: "Kamera Profesional ZEISS" },
+                        { name: "Vivo V50 Pro", desc: "AI Aura Light Portrait" },
+                        { name: "iQOO 14", desc: "Flagship Gaming Performa" },
+                        { name: "Vivo Y29 NFC", desc: "Desain marmer & tahan banting" }
+                    ];
+                    vivoProducts.forEach(p => {
+                        document.write(`
+                            <div class="product-card">
+                                <div class="bg-gray-100 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden">
+                                    <img src="https://placehold.co/400x400/png?text=${p.name.replace(/ /g,'+')}" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-1">${p.name}</h4>
+                                    <p class="text-[10px] text-gray-500 leading-tight mb-4">${p.desc}</p>
+                                </div>
+                                <button onclick="orderViaWA('${p.name}')" class="w-full bg-accent text-white py-2 rounded-lg text-xs font-bold hover:bg-primary transition mt-auto">Cek Harga</button>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- DANA TUNAI BPKB -->
+    <section id="gadai-bpkb" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondary uppercase">Solusi Dana Tunai <br> BPKB Mobil & Motor</h2>
+                    <p class="text-gray-400 mb-8">Butuh modal usaha atau dana mendadak? Ajukan sekarang dengan syarat mudah dan pencairan super cepat.</p>
+                    
+                    <!-- POIN KEUNGGULAN BARU -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex items-start gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-accent transition">
+                            <i class="fa-solid fa-percent text-accent text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Plafond Hingga 90%</h4>
+                                <p class="text-[10px] text-gray-400 mt-1">Dapatkan dana maksimal dari nilai OTR kendaraan Anda.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-accent transition">
+                            <i class="fa-solid fa-map-location-dot text-success text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Nasional / Seluruh Indonesia</h4>
+                                <p class="text-[10px] text-gray-400 mt-1">Melayani pengajuan dari Sabang sampai Merauke.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-accent transition">
+                            <i class="fa-solid fa-shield-halved text-secondary text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Pajak Mati / BI Checking</h4>
+                                <p class="text-[10px] text-gray-400 mt-1">Data dibantu sampai cair meskipun ada kendala pajak atau checking.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-accent transition">
+                            <i class="fa-solid fa-bolt-lightning text-yellow-400 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Cepat, Aman & Terpercaya</h4>
+                                <p class="text-[10px] text-gray-400 mt-1">Proses survei singkat dan diawasi oleh OJK melalui mitra resmi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white text-gray-800 p-8 rounded-3xl shadow-2xl">
+                    <h3 class="text-xl font-bold mb-6 text-center text-primary">Formulir Pengajuan Cepat</h3>
+                    <form onsubmit="submitGadai(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" id="nama" placeholder="Nama Sesuai KTP" class="w-full px-4 py-3 rounded-xl bg-gray-50 border outline-none focus:border-accent text-sm" required>
+                            <input type="text" id="alamat" placeholder="Kota Domisili" class="w-full px-4 py-3 rounded-xl bg-gray-50 border outline-none focus:border-accent text-sm" required>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <select id="jenis_jaminan" class="w-full px-4 py-3 rounded-xl bg-gray-50 border outline-none focus:border-accent text-sm" required>
+                                <option value="">Jenis Jaminan</option>
+                                <option value="BPKB Motor">BPKB Motor</option>
+                                <option value="BPKB Mobil">BPKB Mobil</option>
+                            </select>
+                            <input type="number" id="tahun" placeholder="Tahun Kendaraan" class="w-full px-4 py-3 rounded-xl bg-gray-50 border outline-none focus:border-accent text-sm" required>
+                        </div>
+                        <input type="text" id="merk_tipe" placeholder="Merk & Tipe (Contoh: Honda Vario 160)" class="w-full px-4 py-3 rounded-xl bg-gray-50 border outline-none focus:border-accent text-sm" required>
+                        <input type="text" id="nominal" placeholder="Kebutuhan Dana (Rp)" class="w-full px-4 py-3 rounded-xl bg-gray-50 border outline-none focus:border-accent text-sm" required>
+                        
+                        <button type="submit" class="w-full bg-success hover:bg-green-600 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-3 shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Kirim Pengajuan Sekarang
+                        </button>
+                    </form>
+                    <p class="text-[9px] text-gray-400 mt-4 text-center italic">*Data Anda aman dan akan segera dihubungi oleh tim analis kami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-primary text-gray-400 py-12 border-t border-white/5">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-white mb-2">Aganz Official</h2>
+            <p class="text-xs mb-8">Sukajati, Kec. Haurgeulis, Kab. Indramayu, Jawa Barat.</p>
+            <div class="flex justify-center gap-4 mb-10">
+                <a href="https://www.instagram.com/aganzofficialolshop" target="_blank" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/6282217446919" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-success hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="text-[9px] tracking-widest uppercase">© 2026 Aganz Official - Trusted Gadget & Financial Solutions.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WA -->
+    <a href="https://wa.me/6282217446919" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-success text-white rounded-full flex items-center justify-center shadow-2xl z-50 animate-bounce transition hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        function orderViaWA(productName) {
+            const msg = `Halo Admin Aganz Official, saya tertarik dengan *${productName}*. Boleh info stok dan harga terbarunya?`;
+            window.open(`https://wa.me/6282217446919?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function submitGadai(event) {
+            event.preventDefault();
+            const data = {
+                nama: document.getElementById('nama').value,
+                alamat: document.getElementById('alamat').value,
+                jaminan: document.getElementById('jenis_jaminan').value,
+                merk: document.getElementById('merk_tipe').value,
+                tahun: document.getElementById('tahun').value,
+                dana: document.getElementById('nominal').value
+            };
+            const message = `Halo Admin Aganz Official,\n\nSaya ingin mengajukan *Dana Tunai BPKB*.\n\n*Nama:* ${data.nama}\n*Domisili:* ${data.alamat}\n*Jaminan:* ${data.jaminan}\n*Merk/Tipe:* ${data.merk}\n*Tahun:* ${data.tahun}\n*Kebutuhan Dana:* ${data.dana}`;
+            window.open(`https://wa.me/6282217446919?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
