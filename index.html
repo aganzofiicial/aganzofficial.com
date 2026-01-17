@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aganz Official - Gadget, Aksesoris & Dana Tunai Nasional 2026</title>
+    <title>Aganz Official - Gadget, Motor & Dana Tunai Nasional 2026</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,7 +20,9 @@
                         primary: '#0f172a',
                         accent: '#2563eb',
                         secondary: '#f59e0b',
-                        success: '#22c55e'
+                        success: '#22c55e',
+                        honda: '#cc0000',
+                        yamaha: '#003399'
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
@@ -44,6 +46,9 @@
             .category-title {
                 @apply text-xl font-bold text-primary mb-6 flex items-center gap-3 border-l-4 border-accent pl-4 mt-12;
             }
+            .delivery-badge {
+                @apply bg-red-100 text-red-600 px-4 py-2 rounded-full font-bold text-xs md:text-sm border border-red-200 inline-flex items-center gap-2 animate-pulse;
+            }
         }
     </style>
 </head>
@@ -51,7 +56,7 @@
 
     <!-- Top Bar -->
     <div class="bg-accent text-white py-2 text-center text-[10px] md:text-xs font-bold tracking-widest uppercase">
-        <i class="fa-solid fa-earth-asia mr-2"></i> LAYANAN DANA TUNAI BPKB TERSEDIA UNTUK SELURUH WILAYAH INDONESIA
+        <i class="fa-solid fa-earth-asia mr-2"></i> LAYANAN DANA TUNAI & KREDIT MOTOR TERSEDIA UNTUK SELURUH WILAYAH INDONESIA
     </div>
 
     <!-- Navigation -->
@@ -61,32 +66,43 @@
                 <i class="fa-solid fa-mobile-button text-secondary"></i>
                 <span>Aganz<span class="text-accent">Official</span></span>
             </a>
-            <div class="hidden md:flex space-x-8 font-medium text-sm">
+            <div class="hidden lg:flex space-x-6 font-medium text-sm items-center">
                 <a href="#home" class="hover:text-accent transition">Beranda</a>
-                <a href="#katalog" class="hover:text-accent transition">Katalog Gadget</a>
-                <a href="#gadai-bpkb" class="text-secondary hover:underline flex items-center gap-1 font-bold">
-                    <i class="fa-solid fa-hand-holding-dollar"></i> Dana Tunai BPKB
+                <a href="#motor-baru" class="hover:text-accent transition font-bold"><i class="fa-solid fa-motorcycle"></i> Beli Motor</a>
+                <a href="#katalog" class="hover:text-accent transition"><i class="fa-solid fa-mobile-screen"></i> Lihat Gadget</a>
+                <a href="#gadai-bpkb" class="bg-secondary text-white px-4 py-2 rounded-full hover:bg-yellow-600 transition font-bold flex items-center gap-2 shadow-md">
+                    <i class="fa-solid fa-hand-holding-dollar"></i> Pengajuan Dana Tunai
                 </a>
             </div>
-            <a href="https://wa.me/6282217446919" class="text-success text-2xl md:hidden"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://wa.me/6282217446919" class="text-success text-2xl lg:hidden"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </nav>
 
     <!-- Hero -->
     <header id="home" class="hero-bg text-white min-h-[70vh] flex items-center">
         <div class="container mx-auto px-4 py-16 text-center md:text-left">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Gadget Impian & <br><span class="text-secondary">Solusi Dana Tunai 2026</span></h1>
-                <p class="text-lg text-gray-300 mb-8 leading-relaxed">Pusat smartphone resmi terbaru dan pembiayaan multiguna BPKB dengan proses tercepat di Indonesia.</p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#katalog" class="bg-accent hover:bg-blue-700 px-8 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg"><i class="fa-solid fa-store"></i> Lihat Katalog</a>
-                    <a href="#gadai-bpkb" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg"><i class="fa-solid fa-file-invoice-dollar"></i> Ajukan Dana</a>
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Gadget, Motor Baru & <br><span class="text-secondary">Solusi Dana Tunai 2026</span></h1>
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed">Pusat smartphone resmi, dealer motor Honda/Yamaha, dan pembiayaan multiguna BPKB dengan proses tercepat.</p>
+                
+                <!-- 3 MENU UTAMA -->
+                <div class="flex flex-col md:flex-row gap-4 flex-wrap">
+                    <a href="#motor-baru" class="bg-accent hover:bg-blue-700 px-6 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg flex-1 min-w-[200px]">
+                        <i class="fa-solid fa-motorcycle text-xl"></i> Beli Motor
+                    </a>
+                    <a href="#katalog" class="bg-white text-primary hover:bg-gray-100 px-6 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg flex-1 min-w-[200px]">
+                        <i class="fa-solid fa-store text-xl"></i> Lihat Gadget
+                    </a>
+                    <a href="#gadai-bpkb" class="bg-secondary text-white hover:bg-yellow-600 px-6 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg flex-1 min-w-[200px]">
+                        <i class="fa-solid fa-file-invoice-dollar text-xl"></i> Pengajuan Dana Tunai
+                    </a>
                 </div>
+
             </div>
         </div>
     </header>
 
-    <!-- KATALOG PRODUK -->
+    <!-- KATALOG GADGET -->
     <section id="katalog" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -131,95 +147,9 @@
                         { name: "Galaxy S25 Edge", desc: "Layar melengkung ultra-tipis" },
                         { name: "Galaxy S25", desc: "Flagship standar 2026" },
                         { name: "Galaxy S25 FE", desc: "Fitur mewah harga kompetitif" },
-                        { name: "Galaxy Z Fold 7", desc: "Layar lipat produktivitas" },
-                        { name: "Galaxy Z Flip 7", desc: "Layar lipat compact & stylish" },
-                        { name: "Galaxy A56 5G", desc: "Seri menengah paling populer" },
-                        { name: "Galaxy A36 5G", desc: "Terbaik di kelas 3-4 jutaan" },
-                        { name: "Galaxy A17 5G", desc: "Entry-level 5G terbaru" }
+                        { name: "Galaxy Z Fold 7", desc: "Layar lipat produktivitas" }
                     ];
                     samsungProducts.forEach(p => {
-                        document.write(`
-                            <div class="product-card">
-                                <div class="bg-gray-100 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden">
-                                    <img src="https://placehold.co/400x400/png?text=${p.name.replace(/ /g,'+')}" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-sm mb-1">${p.name}</h4>
-                                    <p class="text-[10px] text-gray-500 leading-tight mb-4">${p.desc}</p>
-                                </div>
-                                <button onclick="orderViaWA('${p.name}')" class="w-full bg-accent text-white py-2 rounded-lg text-xs font-bold hover:bg-primary transition mt-auto">Cek Harga</button>
-                            </div>
-                        `);
-                    });
-                </script>
-            </div>
-
-            <!-- OPPO SERIES -->
-            <h3 class="category-title"><i class="fa-solid fa-camera-retro text-2xl text-green-600"></i> OPPO Series</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <script>
-                    const oppoProducts = [
-                        { name: "Oppo Find X9 Ultra", desc: "Flagship Premium Fotografi" },
-                        { name: "Oppo Reno15 Pro", desc: "Sensor 200MP Portrait" },
-                        { name: "Oppo Reno15", desc: "Seri terlaris di Indonesia" },
-                        { name: "Oppo A6 Pro 5G", desc: "Desain Premium seri A" },
-                        { name: "Oppo A6x", desc: "Durabilitas tinggi entry-level" }
-                    ];
-                    oppoProducts.forEach(p => {
-                        document.write(`
-                            <div class="product-card">
-                                <div class="bg-gray-100 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden">
-                                    <img src="https://placehold.co/400x400/png?text=${p.name.replace(/ /g,'+')}" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-sm mb-1">${p.name}</h4>
-                                    <p class="text-[10px] text-gray-500 leading-tight mb-4">${p.desc}</p>
-                                </div>
-                                <button onclick="orderViaWA('${p.name}')" class="w-full bg-accent text-white py-2 rounded-lg text-xs font-bold hover:bg-primary transition mt-auto">Cek Harga</button>
-                            </div>
-                        `);
-                    });
-                </script>
-            </div>
-
-            <!-- REALME SERIES -->
-            <h3 class="category-title"><i class="fa-solid fa-bolt text-2xl text-yellow-500"></i> Realme Series</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <script>
-                    const realmeProducts = [
-                        { name: "Realme GT 7 Pro", desc: "Snapdragon 8 Elite terbaru" },
-                        { name: "Realme 16 Pro+ 5G", desc: "Kamera Periskop Menengah" },
-                        { name: "Realme P3 Ultra", desc: "Seri Performa Online" },
-                        { name: "Realme C85 Pro", desc: "Baterai monster 7000 mAh" }
-                    ];
-                    realmeProducts.forEach(p => {
-                        document.write(`
-                            <div class="product-card">
-                                <div class="bg-gray-100 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden">
-                                    <img src="https://placehold.co/400x400/png?text=${p.name.replace(/ /g,'+')}" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-sm mb-1">${p.name}</h4>
-                                    <p class="text-[10px] text-gray-500 leading-tight mb-4">${p.desc}</p>
-                                </div>
-                                <button onclick="orderViaWA('${p.name}')" class="w-full bg-accent text-white py-2 rounded-lg text-xs font-bold hover:bg-primary transition mt-auto">Cek Harga</button>
-                            </div>
-                        `);
-                    });
-                </script>
-            </div>
-
-            <!-- VIVO & iQOO SERIES -->
-            <h3 class="category-title"><i class="fa-solid fa-wand-magic-sparkles text-2xl text-blue-400"></i> Vivo & iQOO Series</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <script>
-                    const vivoProducts = [
-                        { name: "Vivo X200 Pro", desc: "Kamera Profesional ZEISS" },
-                        { name: "Vivo V50 Pro", desc: "AI Aura Light Portrait" },
-                        { name: "iQOO 14", desc: "Flagship Gaming Performa" },
-                        { name: "Vivo Y29 NFC", desc: "Desain marmer & tahan banting" }
-                    ];
-                    vivoProducts.forEach(p => {
                         document.write(`
                             <div class="product-card">
                                 <div class="bg-gray-100 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden">
@@ -238,6 +168,98 @@
         </div>
     </section>
 
+    <!-- MOTOR BARU SECTION -->
+    <section id="motor-baru" class="py-20 bg-gray-50 border-t-4 border-secondary/20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary uppercase mb-4">Dealer Resmi Honda & Yamaha</h2>
+                <div class="delivery-badge mb-4">
+                    <i class="fa-solid fa-truck-fast text-lg"></i>
+                    <span>PESAN SEKARANG, LANGSUNG KIRIM HARI INI!</span>
+                </div>
+                <p class="text-gray-600">Melayani Pembelian <b>CASH & KREDIT</b> dengan DP Ringan, Proses Cepat & Garansi Resmi.</p>
+            </div>
+
+            <!-- HONDA MOTOR -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-honda mb-6 flex items-center gap-3 border-b-2 border-honda pb-2">
+                    <i class="fa-solid fa-motorcycle"></i> HONDA MOTORCYCLE <span class="text-xs font-normal text-gray-500 ml-auto bg-white px-2">Unit 2026 Ready Stock</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <script>
+                        const hondaMotor = [
+                            { name: "Honda Beat 2026", desc: "Smart Key, Rangka eSAF Gen 2" },
+                            { name: "Honda Vario 160", desc: "ABS/CBS, Flat Deck Sporty" },
+                            { name: "Honda PCX 160", desc: "Luxury Matic Besar" },
+                            { name: "Honda Scoopy", desc: "Stylish Retro Modern" },
+                            { name: "Honda ADV 160", desc: "Matic Jelajah Jalanan" }
+                        ];
+                        hondaMotor.forEach(m => {
+                            document.write(`
+                                <div class="product-card ring-1 ring-red-100 hover:ring-honda">
+                                    <div class="bg-red-50 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden relative">
+                                        <span class="absolute top-2 right-2 bg-honda text-white text-[10px] px-2 py-1 rounded font-bold">READY</span>
+                                        <img src="https://placehold.co/400x400/png?text=${m.name.replace(/ /g,'+')}" class="w-full h-full object-cover mix-blend-multiply">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm mb-1">${m.name}</h4>
+                                        <p class="text-[10px] text-gray-500 leading-tight mb-4">${m.desc}</p>
+                                    </div>
+                                    <div class="flex gap-2 mt-auto">
+                                        <button onclick="orderMotor('${m.name}', 'Cash')" class="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg text-[10px] font-bold hover:bg-gray-300 transition">CASH</button>
+                                        <button onclick="orderMotor('${m.name}', 'Kredit')" class="flex-1 bg-honda text-white py-2 rounded-lg text-[10px] font-bold hover:bg-red-700 transition">KREDIT</button>
+                                    </div>
+                                </div>
+                            `);
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <!-- YAMAHA MOTOR -->
+            <div>
+                <h3 class="text-2xl font-bold text-yamaha mb-6 flex items-center gap-3 border-b-2 border-yamaha pb-2">
+                    <i class="fa-solid fa-motorcycle"></i> YAMAHA MOTORCYCLE <span class="text-xs font-normal text-gray-500 ml-auto bg-white px-2">Unit 2026 Ready Stock</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <script>
+                        const yamahaMotor = [
+                            { name: "Yamaha NMAX Turbo", desc: "Teknologi Turbo Terbaru" },
+                            { name: "Yamaha Aerox 155", desc: "Connected ABS Sport Scooter" },
+                            { name: "Yamaha Fazzio", desc: "Hybrid Connected Classy" },
+                            { name: "Yamaha Grand Filano", desc: "Fashionable Scooter" },
+                            { name: "Yamaha XMAX 250", desc: "Premium Big Matic" }
+                        ];
+                        yamahaMotor.forEach(m => {
+                            document.write(`
+                                <div class="product-card ring-1 ring-blue-100 hover:ring-yamaha">
+                                    <div class="bg-blue-50 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden relative">
+                                        <span class="absolute top-2 right-2 bg-yamaha text-white text-[10px] px-2 py-1 rounded font-bold">READY</span>
+                                        <img src="https://placehold.co/400x400/png?text=${m.name.replace(/ /g,'+')}" class="w-full h-full object-cover mix-blend-multiply">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm mb-1">${m.name}</h4>
+                                        <p class="text-[10px] text-gray-500 leading-tight mb-4">${m.desc}</p>
+                                    </div>
+                                    <div class="flex gap-2 mt-auto">
+                                        <button onclick="orderMotor('${m.name}', 'Cash')" class="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg text-[10px] font-bold hover:bg-gray-300 transition">CASH</button>
+                                        <button onclick="orderMotor('${m.name}', 'Kredit')" class="flex-1 bg-yamaha text-white py-2 rounded-lg text-[10px] font-bold hover:bg-blue-800 transition">KREDIT</button>
+                                    </div>
+                                </div>
+                            `);
+                        });
+                    </script>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center bg-yellow-50 p-4 rounded-xl border border-yellow-200">
+                <p class="text-xs md:text-sm text-yellow-800">
+                    <i class="fa-solid fa-circle-info mr-1"></i> <b>Catatan:</b> Untuk pengiriman hari ini (Same Day Delivery), mohon selesaikan administrasi sebelum pukul <b>14.00 WIB</b>.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- DANA TUNAI BPKB -->
     <section id="gadai-bpkb" class="py-20 bg-primary text-white">
         <div class="container mx-auto px-4">
@@ -246,7 +268,6 @@
                     <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondary uppercase">Solusi Dana Tunai <br> BPKB Mobil & Motor</h2>
                     <p class="text-gray-400 mb-8">Butuh modal usaha atau dana mendadak? Ajukan sekarang dengan syarat mudah dan pencairan super cepat.</p>
                     
-                    <!-- POIN KEUNGGULAN BARU -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                         <div class="flex items-start gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-accent transition">
                             <i class="fa-solid fa-percent text-accent text-2xl"></i>
@@ -328,6 +349,11 @@
     <script>
         function orderViaWA(productName) {
             const msg = `Halo Admin Aganz Official, saya tertarik dengan *${productName}*. Boleh info stok dan harga terbarunya?`;
+            window.open(`https://wa.me/6282217446919?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function orderMotor(modelName, paymentType) {
+            const msg = `Halo Admin Aganz Official, saya berminat membeli motor *${modelName}* dengan metode pembayaran *${paymentType}*. Apakah unit bisa dikirim hari ini? Mohon info persyaratannya.`;
             window.open(`https://wa.me/6282217446919?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
