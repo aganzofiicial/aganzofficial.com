@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
@@ -103,14 +104,15 @@
         <div class="container mx-auto px-4 py-16 text-center md:text-left">
             <div class="max-w-4xl">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Gadget, Motor Baru & <br><span class="text-secondary">Solusi Dana Tunai 2026</span></h1>
-                <p class="text-lg text-gray-300 mb-8 leading-relaxed">Pusat smartphone resmi, dealer motor Honda/Yamaha, dan pembiayaan multiguna BPKB dengan proses tercepat.</p>
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed">Pusat Smartphone Resmi, Dealer Motor Honda/Yamaha, dan Pembiayaan Multiguna BPKB Dengan Proses Tercepat.</p>
                 
                 <div class="flex flex-col md:flex-row gap-4 flex-wrap">
-                    <a href="#motor-baru" class="bg-accent hover:bg-blue-700 px-6 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg flex-1 min-w-[200px]">
-                        <i class="fa-solid fa-motorcycle text-xl"></i> Beli Motor
-                    </a>
+                          </a>
                     <a href="#katalog" class="bg-white text-primary hover:bg-gray-100 px-6 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg flex-1 min-w-[200px]">
                         <i class="fa-solid fa-store text-xl"></i> Lihat Gadget
+                    <a href="#motor-baru" class="bg-accent hover:bg-blue-700 px-6 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg flex-1 min-w-[200px]">
+                        <i class="fa-solid fa-motorcycle text-xl"></i> Beli Motor
+              
                     </a>
                     <a href="#gadai-bpkb" class="bg-secondary text-white hover:bg-yellow-600 px-6 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg flex-1 min-w-[200px]">
                         <i class="fa-solid fa-file-invoice-dollar text-xl"></i> Pengajuan Dana Tunai
@@ -517,5 +519,38 @@
             window.open(`https://wa.me/6282217446919?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
-</body>
+</body><!-- Script Aktifasi Smooth Scroll -->
+<script>
+    // 1. Inisialisasi Lenis untuk scroll yang halus/lembut
+    const lenis = new Lenis({
+        duration: 1.2, // Kecepatan scroll (detik)
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // 2. Menangani klik pada menu navigasi
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Gunakan fungsi scrollTo milik Lenis
+                lenis.scrollTo(targetElement, {
+                    offset: 0,
+                    immediate: false,
+                    duration: 1.5
+                });
+            }
+        });
+    });
+</script>
+
 </html>
