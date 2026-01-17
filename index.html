@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Smooth Scroll Library (Lenis) - Menggunakan bundle yang lebih stabil -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -52,6 +55,20 @@
             .testimonial-card {
                 @apply bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition;
             }
+        }
+
+        /* Lenis CSS untuk kelancaran scroll */
+        html.lenis {
+            height: auto;
+        }
+        .lenis.lenis-smooth {
+            scroll-behavior: auto;
+        }
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+        .lenis.lenis-stopped {
+            overflow: hidden;
         }
     </style>
 </head>
@@ -353,13 +370,66 @@
         </div>
     </footer>
 
+    <!-- Floating Top Button -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" class="fixed bottom-24 right-6 w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center shadow-xl z-50 transition-all opacity-0 pointer-events-none hover:scale-110">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
     <!-- Floating WA -->
     <a href="https://wa.me/6282217446919" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-success text-white rounded-full flex items-center justify-center shadow-2xl z-50 animate-bounce transition hover:scale-110">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
     <script>
-        // Data Testimoni
+        // --- INISIALISASI SMOOTH SCROLL (LENIS) ---
+        let lenisInstance;
+
+        function initLenis() {
+            if (typeof Lenis !== 'undefined') {
+                lenisInstance = new Lenis({
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    direction: 'vertical',
+                    gestureDirection: 'vertical',
+                    smooth: true,
+                    mouseMultiplier: 1,
+                    smoothTouch: false,
+                    touchMultiplier: 2,
+                    infinite: false,
+                });
+
+                function raf(time) {
+                    lenisInstance.raf(time);
+                    requestAnimationFrame(raf);
+                }
+                requestAnimationFrame(raf);
+
+                // Control Visibility of Scroll to Top Button
+                const scrollTopBtn = document.getElementById('scrollTopBtn');
+                lenisInstance.on('scroll', (e) => {
+                    if (e.scroll > 500) {
+                        scrollTopBtn.style.opacity = '1';
+                        scrollTopBtn.style.pointerEvents = 'auto';
+                    } else {
+                        scrollTopBtn.style.opacity = '0';
+                        scrollTopBtn.style.pointerEvents = 'none';
+                    }
+                });
+            } else {
+                // Retry if library not yet loaded
+                setTimeout(initLenis, 100);
+            }
+        }
+
+        function scrollToTop() {
+            if (lenisInstance) {
+                lenisInstance.scrollTo(0);
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // --- SCRIPT LAINNYA ---
         const gadgetReviews = [
             "Barang original 100%, segel iBox. Mantap!", "iPhone 17 nya udah sampai, pengiriman ke Medan cuma 2 hari.", "Respon admin cepat, dibantu setting icloud juga.", "Packing kayu aman banget, gak nyesel beli di Aganz.", "Harga bersahabat dibanding toko sebelah.", "Udah langganan beli hp di sini, selalu puas.", "Proses cepat, pagi transfer sore resi keluar.", "Barangnya beneran BNIB, terpercaya pokoknya.", "Admin ramah banget, nanya apa aja dijawab.", "Bonus tempered glass sama case, makasih ya.", "iPhone 16e nya mulus, IMEI aman terdaftar.", "Mantap, dapet promo cashback lagi.", "Gak perlu ragu beli gadget di sini, recomended.", "Packing bubble wrap tebel banget, safety.", "Order iPhone 17 Pro, barangnya gokil!", "Pelayanan After salesnya oke banget.", "Sesuai pesanan, warna sesuai yang diminta.", "Cek serial number valid, garansi jalan.", "Makasih Aganz, HP idaman akhirnya kebeli.", "Bintang 5 buat pelayanannya!"
         ];
@@ -382,6 +452,7 @@
 
         function generateTesti(containerId, dataArray) {
             const container = document.getElementById(containerId);
+            if (!container) return;
             dataArray.forEach((text, i) => {
                 const randomName = customerNames[Math.floor(Math.random() * customerNames.length)];
                 const card = document.createElement('div');
@@ -406,6 +477,7 @@
         }
 
         window.onload = () => {
+            initLenis();
             generateTesti('gadget-testi', gadgetReviews);
             generateTesti('motor-testi', motorReviews);
             generateTesti('dana-testi', danaReviews);
