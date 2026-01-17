@@ -177,6 +177,16 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     <script>
                         const hondaMotor = [
+                            { name: "BeAT Street", price: "21.500.000", image: "https://placehold.co/400x400/png?text=BeAT+Street" },
+                            { name: "BeAT Sporty CBS", price: "20.500.000", image: "https://placehold.co/400x400/png?text=BeAT+CBS" },
+                            { name: "BeAT Sporty Deluxe", price: "21.500.000", image: "https://placehold.co/400x400/png?text=BeAT+Deluxe" },
+                            { name: "BeAT Sporty Deluxe Smartkey", price: "22.500.000", image: "https://placehold.co/400x400/png?text=BeAT+Smartkey" },
+                            { name: "Scoopy Energetic", price: "24.500.000", image: "https://placehold.co/400x400/png?text=Scoopy+Energetic" },
+                            { name: "Scoopy Fashion", price: "24.500.000", image: "https://placehold.co/400x400/png?text=Scoopy+Fashion" },
+                            { name: "Scoopy Prestige Smart Key", price: "25.500.000", image: "https://placehold.co/400x400/png?text=Scoopy+Prestige" },
+                            { name: "Scoopy Stylish Smart Key", price: "25.500.000", image: "https://placehold.co/400x400/png?text=Scoopy+Stylish" },
+                            { name: "Genio CBS", price: "21.600.000", image: "https://placehold.co/400x400/png?text=Genio+CBS" },
+                            { name: "Genio CBS ISS", price: "22.300.000", image: "https://placehold.co/400x400/png?text=Genio+ISS" },
                             { name: "Vario 125 CBS", price: "25.750.000", image: "https://placehold.co/400x400/png?text=Vario+125+CBS" },
                             { name: "Vario 125 CBS ISS", price: "27.600.000", image: "https://placehold.co/400x400/png?text=Vario+125+ISS" },
                             { name: "Vario 125 Street", price: "28.050.000", image: "https://placehold.co/400x400/png?text=Vario+Street" },
@@ -439,7 +449,7 @@
         ];
 
         const danaReviews = [
-            "BPKB aman, dana langsung cair 1 jam aja.", "Pajak motor mati 3 tahun tetep dibantu cair.", "Bunga beneran rendah dibanding tempat lain.", "Gak sangka BPKB 2015 masih bisa masuk.", "Pencairan tinggi, dapet 90% dari harga motor.", "Survei sopan, gak ribet nanya macem-macem.", "Dana buat modal usaha akhirnya cair juga.", "Proses nasional beneran, saya di Palembang dibantu.", "BPKB mobil tua juga bisa cair, makasih.", "Sangat membantu buat kebutuhan mendadak.", "Potongannya transparan, gak ada biaya siluman.", "Admin dana tunainya fast respon banget.", "Data dijemput ke rumah, saya gak perlu keluar.", "Cicilannya terjangkau, tenor bisa pilih.", "Terima kasih Aganz, pajak saya dibantu hidupin.", "Cepat, aman, dan terpercaya sesuai slogannya.", "Udah 3x ambil dana di sini, selalu lancar.", "Plafond maksimal, plafon yang dijanjikan sesuai.", "Satu hari beres dari pengajuan sampe cair.", "Rekomendasi banget buat yang butuh dana cepat."
+            "BPKB aman, dana langsung cair 1 jam aja.", "Pajak motor mati 3 tahun tetep dibantu cair.", "Bunga beneran rendah rendah dibanding tempat lain.", "Gak sangka BPKB 2015 masih bisa masuk.", "Pencairan tinggi, dapet 90% dari harga motor.", "Survei sopan, gak ribet nanya macem-macem.", "Dana buat modal usaha akhirnya cair juga.", "Proses nasional beneran, saya di Palembang dibantu.", "BPKB mobil tua juga bisa cair, makasih.", "Sangat membantu buat kebutuhan mendadak.", "Potongannya transparan, gak ada biaya siluman.", "Admin dana tunainya fast respon banget.", "Data dijemput ke rumah, saya gak perlu keluar.", "Cicilannya terjangkau, tenor bisa pilih.", "Terima kasih Aganz, pajak saya dibantu hidupin.", "Cepat, aman, dan terpercaya sesuai slogannya.", "Udah 3x ambil dana di sini, selalu lancar.", "Plafond maksimal, plafon yang dijanjikan sesuai.", "Satu hari beres dari pengajuan sampe cair.", "Rekomendasi banget buat yang butuh dana cepat."
         ];
 
         const customerNames = [
@@ -489,7 +499,7 @@
         }
 
         function orderMotor(modelName, paymentType, price) {
-            const msg = `Halo Admin Aganz Official,\n\nSaya berminat membeli motor *${modelName}*\nHarga: *Rp ${price}*\nMetode Pembayaran: *${paymentType}*\n\nMohon info stok dan persyaratannya. Terima kasih.`;
+            const msg = `Halo Admin Aganz Official,\\n\\nSaya berminat membeli motor *${modelName}*\\nHarga: *Rp ${price}*\\nMetode Pembayaran: *${paymentType}*\\n\\nMohon info stok dan persyaratannya. Terima kasih.`;
             window.open(`https://wa.me/6282217446919?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
@@ -503,7 +513,7 @@
                 tahun: document.getElementById('tahun').value,
                 dana: document.getElementById('nominal').value
             };
-            const message = `Halo Admin Aganz Official,\n\nSaya ingin mengajukan *Dana Tunai BPKB*.\n\n*Nama:* ${data.nama}\n*Domisili:* ${data.alamat}\n*Jaminan:* ${data.jaminan}\n*Merk/Tipe:* ${data.merk}\n*Tahun:* ${data.tahun}\n*Kebutuhan Dana:* ${data.dana}`;
+            const message = `Halo Admin Aganz Official,\\n\\nSaya ingin mengajukan *Dana Tunai BPKB*.\\n\\n*Nama:* ${data.nama}\\n*Domisili:* ${data.alamat}\\n*Jaminan:* ${data.jaminan}\\n*Merk/Tipe:* ${data.merk}\\n*Tahun:* ${data.tahun}\\n*Kebutuhan Dana:* ${data.dana}`;
             window.open(`https://wa.me/6282217446919?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
