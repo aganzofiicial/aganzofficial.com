@@ -49,6 +49,9 @@
             .delivery-badge {
                 @apply bg-red-100 text-red-600 px-4 py-2 rounded-full font-bold text-xs md:text-sm border border-red-200 inline-flex items-center gap-2 animate-pulse;
             }
+            .testimonial-card {
+                @apply bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition;
+            }
         }
     </style>
 </head>
@@ -85,7 +88,6 @@
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Gadget, Motor Baru & <br><span class="text-secondary">Solusi Dana Tunai 2026</span></h1>
                 <p class="text-lg text-gray-300 mb-8 leading-relaxed">Pusat smartphone resmi, dealer motor Honda/Yamaha, dan pembiayaan multiguna BPKB dengan proses tercepat.</p>
                 
-                <!-- 3 MENU UTAMA -->
                 <div class="flex flex-col md:flex-row gap-4 flex-wrap">
                     <a href="#motor-baru" class="bg-accent hover:bg-blue-700 px-6 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg flex-1 min-w-[200px]">
                         <i class="fa-solid fa-motorcycle text-xl"></i> Beli Motor
@@ -97,7 +99,6 @@
                         <i class="fa-solid fa-file-invoice-dollar text-xl"></i> Pengajuan Dana Tunai
                     </a>
                 </div>
-
             </div>
         </div>
     </header>
@@ -110,50 +111,21 @@
                 <p class="text-gray-500 mt-2 italic">Garansi Resmi iBox / SEIN / TAM - Unit Segel (BNIB)</p>
             </div>
 
-            <!-- APPLE SERIES -->
             <h3 class="category-title"><i class="fa-brands fa-apple text-2xl"></i> Apple iPhone Series</h3>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 <script>
                     const appleProducts = [
-                        { name: "iPhone 17 Pro Max", desc: "Flagship tertinggi, layar LTPO baru" },
-                        { name: "iPhone 17 Pro", desc: "Ukuran ringkas, fitur kamera Pro" },
-                        { name: "iPhone 17 Air", desc: "Model ultra-tipis terbaru" },
-                        { name: "iPhone 17", desc: "Refresh rate tinggi (120Hz)" },
-                        { name: "iPhone 16e", desc: "Opsi budget terjangkau" }
+                        { name: "iPhone 17 Pro Max", desc: "Flagship tertinggi 2026", image: "https://placehold.co/400x400/png?text=iPhone+17+PM" },
+                        { name: "iPhone 17 Pro", desc: "Fitur kamera Pro terbaru", image: "https://placehold.co/400x400/png?text=iPhone+17+Pro" },
+                        { name: "iPhone 17 Air", desc: "Model ultra-tipis", image: "https://placehold.co/400x400/png?text=iPhone+17+Air" },
+                        { name: "iPhone 17", desc: "Refresh rate 120Hz", image: "https://placehold.co/400x400/png?text=iPhone+17" },
+                        { name: "iPhone 16e", desc: "Opsi budget terjangkau", image: "https://placehold.co/400x400/png?text=iPhone+16e" }
                     ];
                     appleProducts.forEach(p => {
                         document.write(`
                             <div class="product-card">
                                 <div class="bg-gray-100 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden">
-                                    <img src="https://placehold.co/400x400/png?text=${p.name.replace(/ /g,'+')}" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-sm mb-1">${p.name}</h4>
-                                    <p class="text-[10px] text-gray-500 leading-tight mb-4">${p.desc}</p>
-                                </div>
-                                <button onclick="orderViaWA('${p.name}')" class="w-full bg-accent text-white py-2 rounded-lg text-xs font-bold hover:bg-primary transition mt-auto">Cek Harga</button>
-                            </div>
-                        `);
-                    });
-                </script>
-            </div>
-
-            <!-- SAMSUNG SERIES -->
-            <h3 class="category-title"><i class="fa-solid fa-mobile-screen-button text-2xl text-blue-600"></i> Samsung Galaxy Series</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <script>
-                    const samsungProducts = [
-                        { name: "Galaxy S25 Ultra", desc: "Kamera Zoom 200MP Terbaru" },
-                        { name: "Galaxy S25 Edge", desc: "Layar melengkung ultra-tipis" },
-                        { name: "Galaxy S25", desc: "Flagship standar 2026" },
-                        { name: "Galaxy S25 FE", desc: "Fitur mewah harga kompetitif" },
-                        { name: "Galaxy Z Fold 7", desc: "Layar lipat produktivitas" }
-                    ];
-                    samsungProducts.forEach(p => {
-                        document.write(`
-                            <div class="product-card">
-                                <div class="bg-gray-100 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden">
-                                    <img src="https://placehold.co/400x400/png?text=${p.name.replace(/ /g,'+')}" class="w-full h-full object-cover">
+                                    <img src="${p.image}" class="w-full h-full object-cover">
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-sm mb-1">${p.name}</h4>
@@ -183,31 +155,36 @@
             <!-- HONDA MOTOR -->
             <div class="mb-16">
                 <h3 class="text-2xl font-bold text-honda mb-6 flex items-center gap-3 border-b-2 border-honda pb-2">
-                    <i class="fa-solid fa-motorcycle"></i> HONDA MOTORCYCLE <span class="text-xs font-normal text-gray-500 ml-auto bg-white px-2">Unit 2026 Ready Stock</span>
+                    <i class="fa-solid fa-motorcycle"></i> HONDA MOTORCYCLE
                 </h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     <script>
                         const hondaMotor = [
-                            { name: "Honda Beat 2026", desc: "Smart Key, Rangka eSAF Gen 2" },
-                            { name: "Honda Vario 160", desc: "ABS/CBS, Flat Deck Sporty" },
-                            { name: "Honda PCX 160", desc: "Luxury Matic Besar" },
-                            { name: "Honda Scoopy", desc: "Stylish Retro Modern" },
-                            { name: "Honda ADV 160", desc: "Matic Jelajah Jalanan" }
+                            { name: "Vario 125 CBS", price: "25.750.000", image: "https://placehold.co/400x400/png?text=Vario+125+CBS" },
+                            { name: "Vario 125 CBS ISS", price: "27.600.000", image: "https://placehold.co/400x400/png?text=Vario+125+ISS" },
+                            { name: "Vario 125 Street", price: "28.050.000", image: "https://placehold.co/400x400/png?text=Vario+Street" },
+                            { name: "Vario 160 CBS", price: "29.500.000", image: "https://placehold.co/400x400/png?text=Vario+160+CBS" },
+                            { name: "Vario 160 ABS", price: "32.550.000", image: "https://placehold.co/400x400/png?text=Vario+160+ABS" },
+                            { name: "PCX 160 CBS", price: "30.550.000", image: "https://placehold.co/400x400/png?text=PCX+160+CBS" },
+                            { name: "PCX 160 ABS", price: "38.500.000", image: "https://placehold.co/400x400/png?text=PCX+160+ABS" },
+                            { name: "PCX 160 ABS Roadsync", price: "41.600.000", image: "https://placehold.co/400x400/png?text=PCX+Roadsync" },
+                            { name: "ADV 160 CBS", price: "37.850.000", image: "https://placehold.co/400x400/png?text=ADV+160+CBS" },
+                            { name: "ADV 160 ABS", price: "40.700.000", image: "https://placehold.co/400x400/png?text=ADV+160+ABS" },
+                            { name: "ADV 160 ABS Roadsync", price: "42.500.000", image: "https://placehold.co/400x400/png?text=ADV+Roadsync" }
                         ];
                         hondaMotor.forEach(m => {
                             document.write(`
                                 <div class="product-card ring-1 ring-red-100 hover:ring-honda">
                                     <div class="bg-red-50 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden relative">
-                                        <span class="absolute top-2 right-2 bg-honda text-white text-[10px] px-2 py-1 rounded font-bold">READY</span>
-                                        <img src="https://placehold.co/400x400/png?text=${m.name.replace(/ /g,'+')}" class="w-full h-full object-cover mix-blend-multiply">
+                                        <img src="${m.image}" class="w-full h-full object-cover mix-blend-multiply">
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-sm mb-1">${m.name}</h4>
-                                        <p class="text-[10px] text-gray-500 leading-tight mb-4">${m.desc}</p>
+                                        <h4 class="font-bold text-[10px] mb-1 uppercase">${m.name}</h4>
+                                        <p class="text-sm font-bold text-honda mb-4">Rp ${m.price}</p>
                                     </div>
                                     <div class="flex gap-2 mt-auto">
-                                        <button onclick="orderMotor('${m.name}', 'Cash')" class="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg text-[10px] font-bold hover:bg-gray-300 transition">CASH</button>
-                                        <button onclick="orderMotor('${m.name}', 'Kredit')" class="flex-1 bg-honda text-white py-2 rounded-lg text-[10px] font-bold hover:bg-red-700 transition">KREDIT</button>
+                                        <button onclick="orderMotor('${m.name}', 'Cash', '${m.price}')" class="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg text-[9px] font-bold hover:bg-gray-300 transition">CASH</button>
+                                        <button onclick="orderMotor('${m.name}', 'Kredit', '${m.price}')" class="flex-1 bg-honda text-white py-2 rounded-lg text-[9px] font-bold hover:bg-red-700 transition">KREDIT</button>
                                     </div>
                                 </div>
                             `);
@@ -219,43 +196,48 @@
             <!-- YAMAHA MOTOR -->
             <div>
                 <h3 class="text-2xl font-bold text-yamaha mb-6 flex items-center gap-3 border-b-2 border-yamaha pb-2">
-                    <i class="fa-solid fa-motorcycle"></i> YAMAHA MOTORCYCLE <span class="text-xs font-normal text-gray-500 ml-auto bg-white px-2">Unit 2026 Ready Stock</span>
+                    <i class="fa-solid fa-motorcycle"></i> YAMAHA MOTORCYCLE
                 </h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     <script>
                         const yamahaMotor = [
-                            { name: "Yamaha NMAX Turbo", desc: "Teknologi Turbo Terbaru" },
-                            { name: "Yamaha Aerox 155", desc: "Connected ABS Sport Scooter" },
-                            { name: "Yamaha Fazzio", desc: "Hybrid Connected Classy" },
-                            { name: "Yamaha Grand Filano", desc: "Fashionable Scooter" },
-                            { name: "Yamaha XMAX 250", desc: "Premium Big Matic" }
+                            { name: "N-MAX Neo", price: "34.900.000", image: "https://placehold.co/400x400/png?text=NMAX+Neo" },
+                            { name: "N-MAX Neo S", price: "35.900.000", image: "https://placehold.co/400x400/png?text=NMAX+Neo+S" },
+                            { name: "N-MAX Turbo", price: "40.100.000", image: "https://placehold.co/400x400/png?text=NMAX+Turbo" },
+                            { name: "N-MAX Turbo Techmax", price: "45.600.000", image: "https://placehold.co/400x400/png?text=NMAX+Techmax" },
+                            { name: "N-MAX Turbo Techmax Ultimate", price: "47.600.000", image: "https://placehold.co/400x400/png?text=NMAX+Ultimate" },
+                            { name: "X-MAX 250", price: "69.750.000", image: "https://placehold.co/400x400/png?text=XMAX+250" },
+                            { name: "X-MAX Techmax", price: "77.150.000", image: "https://placehold.co/400x400/png?text=XMAX+Techmax" },
+                            { name: "Aerox Alpha", price: "31.800.000", image: "https://placehold.co/400x400/png?text=Aerox+Alpha" },
+                            { name: "Aerox Alpha Cybercity", price: "36.200.000", image: "https://placehold.co/400x400/png?text=Aerox+Cybercity" },
+                            { name: "Aerox Alpha Turbo", price: "41.800.000", image: "https://placehold.co/400x400/png?text=Aerox+Turbo" },
+                            { name: "Aerox Alpha Turbo Ultimate", price: "44.000.000", image: "https://placehold.co/400x400/png?text=Aerox+Ultimate" },
+                            { name: "All New X-Ride 125", price: "22.500.000", image: "https://placehold.co/400x400/png?text=XRide+125" },
+                            { name: "Fazzio Hybrid", price: "23.900.000", image: "https://placehold.co/400x400/png?text=Fazzio+Hybrid" },
+                            { name: "Fazzio Hybrid Neo", price: "25.600.000", image: "https://placehold.co/400x400/png?text=Fazzio+Neo" },
+                            { name: "Fazzio Hybrid Lux", price: "26.300.000", image: "https://placehold.co/400x400/png?text=Fazzio+Lux" },
+                            { name: "Grand Filano Hybrid Neo", price: "29.800.000", image: "https://placehold.co/400x400/png?text=Filano+Neo" },
+                            { name: "Grand Filano Hybrid Lux", price: "30.500.000", image: "https://placehold.co/400x400/png?text=Filano+Lux" }
                         ];
                         yamahaMotor.forEach(m => {
                             document.write(`
                                 <div class="product-card ring-1 ring-blue-100 hover:ring-yamaha">
                                     <div class="bg-blue-50 rounded-xl aspect-square mb-4 flex items-center justify-center overflow-hidden relative">
-                                        <span class="absolute top-2 right-2 bg-yamaha text-white text-[10px] px-2 py-1 rounded font-bold">READY</span>
-                                        <img src="https://placehold.co/400x400/png?text=${m.name.replace(/ /g,'+')}" class="w-full h-full object-cover mix-blend-multiply">
+                                        <img src="${m.image}" class="w-full h-full object-cover mix-blend-multiply">
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-sm mb-1">${m.name}</h4>
-                                        <p class="text-[10px] text-gray-500 leading-tight mb-4">${m.desc}</p>
+                                        <h4 class="font-bold text-[10px] mb-1 uppercase">${m.name}</h4>
+                                        <p class="text-sm font-bold text-yamaha mb-4">Rp ${m.price}</p>
                                     </div>
                                     <div class="flex gap-2 mt-auto">
-                                        <button onclick="orderMotor('${m.name}', 'Cash')" class="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg text-[10px] font-bold hover:bg-gray-300 transition">CASH</button>
-                                        <button onclick="orderMotor('${m.name}', 'Kredit')" class="flex-1 bg-yamaha text-white py-2 rounded-lg text-[10px] font-bold hover:bg-blue-800 transition">KREDIT</button>
+                                        <button onclick="orderMotor('${m.name}', 'Cash', '${m.price}')" class="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg text-[9px] font-bold hover:bg-gray-300 transition">CASH</button>
+                                        <button onclick="orderMotor('${m.name}', 'Kredit', '${m.price}')" class="flex-1 bg-yamaha text-white py-2 rounded-lg text-[9px] font-bold hover:bg-blue-800 transition">KREDIT</button>
                                     </div>
                                 </div>
                             `);
                         });
                     </script>
                 </div>
-            </div>
-            
-            <div class="mt-8 text-center bg-yellow-50 p-4 rounded-xl border border-yellow-200">
-                <p class="text-xs md:text-sm text-yellow-800">
-                    <i class="fa-solid fa-circle-info mr-1"></i> <b>Catatan:</b> Untuk pengiriman hari ini (Same Day Delivery), mohon selesaikan administrasi sebelum pukul <b>14.00 WIB</b>.
-                </p>
             </div>
         </div>
     </section>
@@ -265,36 +247,32 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondary uppercase">Solusi Dana Tunai <br> BPKB Mobil & Motor</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondary uppercase leading-tight">Dana Tunai BPKB<br> Mobil & Motor</h2>
                     <p class="text-gray-400 mb-8">Butuh modal usaha atau dana mendadak? Ajukan sekarang dengan syarat mudah dan pencairan super cepat.</p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                        <div class="flex items-start gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-accent transition">
-                            <i class="fa-solid fa-percent text-accent text-2xl"></i>
-                            <div>
-                                <h4 class="font-bold text-sm">Plafond Hingga 90%</h4>
-                                <p class="text-[10px] text-gray-400 mt-1">Dapatkan dana maksimal dari nilai OTR kendaraan Anda.</p>
-                            </div>
+                    <!-- FITUR POIN -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                        <div class="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition">
+                            <i class="fa-solid fa-money-bill-trend-up text-success text-xl"></i>
+                            <span class="text-sm font-semibold">Plafond Hingga 90%</span>
                         </div>
-                        <div class="flex items-start gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-accent transition">
-                            <i class="fa-solid fa-map-location-dot text-success text-2xl"></i>
-                            <div>
-                                <h4 class="font-bold text-sm">Nasional / Seluruh Indonesia</h4>
-                                <p class="text-[10px] text-gray-400 mt-1">Melayani pengajuan dari Sabang sampai Merauke.</p>
-                            </div>
+                        <div class="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition">
+                            <i class="fa-solid fa-percent text-secondary text-xl"></i>
+                            <span class="text-sm font-semibold">Bunga Rendah</span>
                         </div>
-                        <div class="flex items-start gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-accent transition">
-                            <i class="fa-solid fa-shield-halved text-secondary text-2xl"></i>
-                            <div>
-                                <h4 class="font-bold text-sm">Pajak Mati / BI Checking</h4>
-                                <p class="text-[10px] text-gray-400 mt-1">Data dibantu sampai cair meskipun ada kendala pajak atau checking.</p>
-                            </div>
+                        <div class="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition">
+                            <i class="fa-solid fa-file-shield text-blue-400 text-xl"></i>
+                            <span class="text-sm font-semibold">Pajak Mati Bisa Di Bantu</span>
                         </div>
-                        <div class="flex items-start gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-accent transition">
-                            <i class="fa-solid fa-bolt-lightning text-yellow-400 text-2xl"></i>
+                        <div class="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition">
+                            <i class="fa-solid fa-bolt-lightning text-yellow-400 text-xl animate-pulse"></i>
+                            <span class="text-sm font-semibold">Cepat, Aman & Terpercaya</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10 col-span-full hover:bg-white/10 transition">
+                            <i class="fa-solid fa-earth-asia text-accent text-2xl"></i>
                             <div>
-                                <h4 class="font-bold text-sm">Cepat, Aman & Terpercaya</h4>
-                                <p class="text-[10px] text-gray-400 mt-1">Proses survei singkat dan diawasi oleh OJK melalui mitra resmi.</p>
+                                <span class="text-sm font-bold block">Nasional / Seluruh Indonesia</span>
+                                <span class="text-xs text-gray-400">Melayani pengajuan dari Sabang sampai Merauke secara profesional.</span>
                             </div>
                         </div>
                     </div>
@@ -322,8 +300,46 @@
                             <i class="fa-brands fa-whatsapp text-xl"></i> Kirim Pengajuan Sekarang
                         </button>
                     </form>
-                    <p class="text-[9px] text-gray-400 mt-4 text-center italic">*Data Anda aman dan akan segera dihubungi oleh tim analis kami.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-20 bg-gray-100 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary uppercase">Apa Kata Pelanggan Kami?</h2>
+                <p class="text-gray-500 mt-2">Ribuan transaksi sukses dari seluruh penjuru Indonesia.</p>
+            </div>
+
+            <!-- TAB TESTIMONI -->
+            <div class="grid grid-cols-1 gap-16">
+                
+                <!-- GADGET TESTIMONI -->
+                <div>
+                    <h3 class="category-title"><i class="fa-solid fa-mobile-screen text-accent"></i> Pembelian Gadget</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="gadget-testi">
+                        <!-- JS akan generate testimoni -->
+                    </div>
+                </div>
+
+                <!-- MOTOR TESTIMONI -->
+                <div>
+                    <h3 class="category-title"><i class="fa-solid fa-motorcycle text-honda"></i> Pembelian Motor</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="motor-testi">
+                        <!-- JS akan generate testimoni -->
+                    </div>
+                </div>
+
+                <!-- DANA TUNAI TESTIMONI -->
+                <div>
+                    <h3 class="category-title"><i class="fa-solid fa-hand-holding-dollar text-success"></i> Pengajuan Dana Tunai</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="dana-testi">
+                        <!-- JS akan generate testimoni -->
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -333,11 +349,7 @@
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold text-white mb-2">Aganz Official</h2>
             <p class="text-xs mb-8">Sukajati, Kec. Haurgeulis, Kab. Indramayu, Jawa Barat.</p>
-            <div class="flex justify-center gap-4 mb-10">
-                <a href="https://www.instagram.com/aganzofficialolshop" target="_blank" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://wa.me/6282217446919" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-success hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
-            </div>
-            <p class="text-[9px] tracking-widest uppercase">© 2026 Aganz Official - Trusted Gadget & Financial Solutions.</p>
+            <p class="text-[9px] tracking-widest uppercase">© 2026 Aganz Official - Trusted Financial Solutions.</p>
         </div>
     </footer>
 
@@ -347,13 +359,65 @@
     </a>
 
     <script>
+        // Data Testimoni
+        const gadgetReviews = [
+            "Barang original 100%, segel iBox. Mantap!", "iPhone 17 nya udah sampai, pengiriman ke Medan cuma 2 hari.", "Respon admin cepat, dibantu setting icloud juga.", "Packing kayu aman banget, gak nyesel beli di Aganz.", "Harga bersahabat dibanding toko sebelah.", "Udah langganan beli hp di sini, selalu puas.", "Proses cepat, pagi transfer sore resi keluar.", "Barangnya beneran BNIB, terpercaya pokoknya.", "Admin ramah banget, nanya apa aja dijawab.", "Bonus tempered glass sama case, makasih ya.", "iPhone 16e nya mulus, IMEI aman terdaftar.", "Mantap, dapet promo cashback lagi.", "Gak perlu ragu beli gadget di sini, recomended.", "Packing bubble wrap tebel banget, safety.", "Order iPhone 17 Pro, barangnya gokil!", "Pelayanan After salesnya oke banget.", "Sesuai pesanan, warna sesuai yang diminta.", "Cek serial number valid, garansi jalan.", "Makasih Aganz, HP idaman akhirnya kebeli.", "Bintang 5 buat pelayanannya!"
+        ];
+
+        const motorReviews = [
+            "PCX 160 nya udah parkir di garasi, makasih Aganz.", "Kredit Vario 125 DP minim banget, proses dibantu.", "STNK cepet jadinya, gak pake lama.", "Unit ready stok, sore pesen besok dikirim.", "Admin motornya asik, dikasih diskon angsuran.", "NMAX Turbo emang kenceng, makasih infonya.", "Dealer resmi terpercaya, hadiah jaketnya keren.", "Dibantu sampe acc leasing, mantap.", "Motor Aerox Cybercity nya ganteng parah.", "Beli cash dapet potongan harga lumayan.", "Pengiriman ke Bandung aman pake mobil bak.", "Vario 160 ABS emang beda, pengereman mantap.", "Proses data cuma lewat WA, simpel banget.", "Salesnya sabar nungguin data saya yang kurang.", "Makasih buat unit ADV 160 nya.", "XMAX Techmax barang langka tapi di sini ready.", "Plat nomor dibantu percepat, sukses terus.", "Fazzio Hybrid nya irit banget, puas!", "Grand Filano Lux nya dapet pujian terus di jalan.", "Beli motor gak pake ribet ya cuma di sini."
+        ];
+
+        const danaReviews = [
+            "BPKB aman, dana langsung cair 1 jam aja.", "Pajak motor mati 3 tahun tetep dibantu cair.", "Bunga beneran rendah dibanding tempat lain.", "Gak sangka BPKB 2015 masih bisa masuk.", "Pencairan tinggi, dapet 90% dari harga motor.", "Survei sopan, gak ribet nanya macem-macem.", "Dana buat modal usaha akhirnya cair juga.", "Proses nasional beneran, saya di Palembang dibantu.", "BPKB mobil tua juga bisa cair, makasih.", "Sangat membantu buat kebutuhan mendadak.", "Potongannya transparan, gak ada biaya siluman.", "Admin dana tunainya fast respon banget.", "Data dijemput ke rumah, saya gak perlu keluar.", "Cicilannya terjangkau, tenor bisa pilih.", "Terima kasih Aganz, pajak saya dibantu hidupin.", "Cepat, aman, dan terpercaya sesuai slogannya.", "Udah 3x ambil dana di sini, selalu lancar.", "Plafond maksimal, plafon yang dijanjikan sesuai.", "Satu hari beres dari pengajuan sampe cair.", "Rekomendasi banget buat yang butuh dana cepat."
+        ];
+
+        const customerNames = [
+            "Budi Santoso", "Siti Aminah", "Rizky Pratama", "Dewi Lestari", "Andi Wijaya",
+            "Lani Permata", "Fajar Ramadhan", "Putri Utami", "Hendra Kusuma", "Agus Salim",
+            "Maya Sari", "Eko Prasetyo", "Indah Wahyuni", "Dedi Kurniawan", "Ratna Dwi",
+            "Zaki Anwar", "Nina Marlina", "Taufik Hidayat", "Siska Amelia", "Robby Sugara",
+            "Yanto", "Rina", "Bambang", "Wati", "Gerry", "Lina", "Annas", "Fitri", "Yoga", "Amel"
+        ];
+
+        function generateTesti(containerId, dataArray) {
+            const container = document.getElementById(containerId);
+            dataArray.forEach((text, i) => {
+                const randomName = customerNames[Math.floor(Math.random() * customerNames.length)];
+                const card = document.createElement('div');
+                card.className = "testimonial-card";
+                card.innerHTML = `
+                    <div class="flex items-center gap-2 mb-2 text-yellow-400 text-[10px]">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-[11px] italic text-gray-600 mb-3 leading-relaxed">"${text}"</p>
+                    <div class="flex items-center gap-2 pt-3 border-t border-gray-50">
+                        <div class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-[10px] font-bold text-accent">
+                            ${randomName.charAt(0)}
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold text-gray-800 block">${randomName}</span>
+                            <span class="text-[8px] text-gray-400 uppercase tracking-tighter">Verified Buyer</span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        window.onload = () => {
+            generateTesti('gadget-testi', gadgetReviews);
+            generateTesti('motor-testi', motorReviews);
+            generateTesti('dana-testi', danaReviews);
+        };
+
         function orderViaWA(productName) {
             const msg = `Halo Admin Aganz Official, saya tertarik dengan *${productName}*. Boleh info stok dan harga terbarunya?`;
             window.open(`https://wa.me/6282217446919?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        function orderMotor(modelName, paymentType) {
-            const msg = `Halo Admin Aganz Official, saya berminat membeli motor *${modelName}* dengan metode pembayaran *${paymentType}*. Apakah unit bisa dikirim hari ini? Mohon info persyaratannya.`;
+        function orderMotor(modelName, paymentType, price) {
+            const msg = `Halo Admin Aganz Official,\n\nSaya berminat membeli motor *${modelName}*\nHarga: *Rp ${price}*\nMetode Pembayaran: *${paymentType}*\n\nMohon info stok dan persyaratannya. Terima kasih.`;
             window.open(`https://wa.me/6282217446919?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
